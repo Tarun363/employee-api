@@ -16,4 +16,8 @@ public interface EmployeeService {
     Employee updateEmployee(long id, EmployeeDTO employeeDTO) throws GlobalException;
 
     List<Employee> getEmployeesSalaryBetween(long min, long max);
+
+    void removeEmployee(long id);
+
+    double taxDeductionForEmployee(long id);
 }

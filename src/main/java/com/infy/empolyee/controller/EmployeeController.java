@@ -41,7 +41,7 @@ public class EmployeeController {
     @PutMapping("/update/{id}")
     public ResponseEntity<String> updateEmployee(@PathVariable long id, @RequestBody EmployeeDTO employeeDTO) throws GlobalException {
         employeeService.updateEmployee(id, employeeDTO);
-        return new ResponseEntity<>("Employee updated successfully", HttpStatus.OK);
+        return new ResponseEntity<>("Employee updated successfully!", HttpStatus.OK);
     }
 
     @GetMapping("/salary/{min}/{max}")
@@ -49,5 +49,15 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.getEmployeesSalaryBetween(min, max), HttpStatus.OK);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> removeEmployee(@PathVariable long id) throws GlobalException {
+        employeeService.removeEmployee(id);
+        return new ResponseEntity<>("Employee deleted successfully!", HttpStatus.OK);
+    }
+
+    @GetMapping("/tax/{id}")
+    public ResponseEntity<Double> taxDeductionForEmployee(@PathVariable long id) throws GlobalException {
+        return new ResponseEntity<>(employeeService.taxDeductionForEmployee(id), HttpStatus.OK);
+    }
 
 }

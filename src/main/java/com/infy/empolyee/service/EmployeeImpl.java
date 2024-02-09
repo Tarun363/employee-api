@@ -12,6 +12,10 @@ import java.util.List;
 @Service
 public class EmployeeImpl implements EmployeeService {
 
+    private static final double TAX_AMOUNT = 50000;
+    private static final double TAX_PERCENTAGE = 0.20;
+
+
     @Autowired
     private EmployeeRepository employeeRepository;
 
@@ -57,6 +61,24 @@ public class EmployeeImpl implements EmployeeService {
     @Override
     public List<Employee> getEmployeesSalaryBetween(long min, long max) {
         return employeeRepository.findBySalaryBetweenOrderByNameDesc(min, max);
+    }
+
+    @Override
+    public void removeEmployee(long id) {
+        getEmployeeById(id);
+        employeeRepository.deleteById(id);
+    }
+
+    @Override
+    public double taxDeductionForEmployee(long id) {
+        Employee employee = getEmployeeById(id);
+        double salary = employee.getSalary();
+        double taxDeduction = 0;
+        if (salary <= TAX_AMOUNT) {
+            return taxDeduction;
+        }
+        taxDeduction = (salary * TAX_PERCENTAGE);
+        return taxDeduction;
     }
 
     public void validateEmployeeDTO(EmployeeDTO employeeDTO) {
