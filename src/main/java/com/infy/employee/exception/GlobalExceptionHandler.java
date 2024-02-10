@@ -1,15 +1,13 @@
-package com.infy.empolyee.exception;
+package com.infy.employee.exception;
 
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.server.ResponseStatusException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler(GlobalException.class)
-    public final ResponseEntity<ExceptionResponse> HandlerGlobalException(GlobalException ex) {
+    public final ResponseEntity<ExceptionResponse> handlerGlobalException(GlobalException ex) {
         ExceptionResponse response = new ExceptionResponse();
         response.setErrorMessage(ex.getMessage());
         response.setErrorCode(ex.getHttpStatus().value());

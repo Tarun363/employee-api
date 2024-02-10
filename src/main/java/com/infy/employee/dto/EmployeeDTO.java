@@ -1,4 +1,4 @@
-package com.infy.empolyee.dto;
+package com.infy.employee.dto;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;

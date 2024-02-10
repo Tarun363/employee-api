@@ -1,4 +1,4 @@
-package com.infy.empolyee.exception;
+package com.infy.employee.exception;
 
 import lombok.Data;
 import org.springframework.http.HttpStatus;

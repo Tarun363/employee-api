@@ -1,4 +1,4 @@
-package com.infy.empolyee.entity;
+package com.infy.employee.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

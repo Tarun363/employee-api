@@ -1,8 +1,8 @@
-package com.infy.empolyee.service;
+package com.infy.employee.service;
 
-import com.infy.empolyee.dto.EmployeeDTO;
-import com.infy.empolyee.entity.Employee;
-import com.infy.empolyee.exception.GlobalException;
+import com.infy.employee.dto.EmployeeDTO;
+import com.infy.employee.entity.Employee;
+import com.infy.employee.exception.GlobalException;
 
 import java.util.List;
 
