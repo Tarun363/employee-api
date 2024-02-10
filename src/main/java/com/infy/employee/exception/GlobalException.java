@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @Data
 public class GlobalException extends RuntimeException {
 
-    private static final long serialVersionUID = -3578710730813801715L;
     private final String message;
     private HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
 
@@ -18,7 +17,6 @@ public class GlobalException extends RuntimeException {
     }
 
     public GlobalException(String message) {
-        this.httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
         this.message = message;
     }
 
