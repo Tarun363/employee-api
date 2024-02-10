@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EmployeeImpl implements EmployeeService {
+public class EmployeeServiceImpl implements EmployeeService {
 
     private static final double TAX_AMOUNT = 50000;
     private static final double TAX_PERCENTAGE = 0.20;
